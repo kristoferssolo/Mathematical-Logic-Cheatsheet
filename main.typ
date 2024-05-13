@@ -3,6 +3,7 @@
 #show outline.entry.where(level: 1): it => {
   upper(it)
 }
+#set text(size: 8pt)
 
 #set heading(numbering: "1.")
 
@@ -153,7 +154,7 @@ $[L_1, L_2, L_9, M P]: (A->B)->( not B-> not A)$. What does it mean? It's the
 so-called *Contraposition Law*.
 
 Note. The following rule form of Contraposition Law is called *Modus Tollens*:
-$[L_1, L_2, L_9, M P]: A->B, not B tack.r not A, or, ((A->B; not B)/(not A)$ // TODO: factcheck
+$[L_1, L_2, L_9, M P]: A->B, not B tack.r not A, or, ((A->B; not B)/(not A))$ // TODO: factcheck
 
 === Theorem 2.4.4
 
@@ -209,14 +210,13 @@ L_11, M P]: (A->B)->(( not A->B)->B)$.
 
 === Theorem 2.6.3
 
-$[L_1-L_11, M P]: ( not B-> not A)->(A->B)$. Hence, $[L_1-L_11, M P]: (A->B) <-> ( not B-> not A)$.
+$[L_1-L_11, M P]: (not B-> not A)->(A->B)$. Hence, $[L_1-L_11, M P]: (A->B) <-> ( not B-> not A)$.
 
 === Theorem 2.6.3
 
 _(another one with the same number of because numbering error (it seems like it))_
 
-$[L_1-L_9, L_11, M P]: ˫ not (A and B)-> not A or not B$ . Hence, $[L_1-L_9, L_11, M P]: ˫
-not (A and B)<-> not A or not B$ .
+$[L_1-L_9, L_11, M P]: tack.r not (A and B)-> not A or not B$. Hence, $[L_1-L_9, L_11, M P]: tack.r not (A and B)<-> not A or not B$ .
 
 === Theorem 2.6.4
 
@@ -242,7 +242,7 @@ L_11, M P]$.
 
 The axiom $L_9$ cannot be proved in $[L_1-L_8, L_10, M P]$.
 
-== Replacement Theorem 1
+=== Replacement Theorem 1
 
 Let us consider three formulas: $B$, $B'$, $C$, where $B$ is a sub-formula of
 $C$, and $o(B)$ is a propositional occurrence of $B$ in $C$. Let us denote by
@@ -259,54 +259,54 @@ formula obtained from $C$ by replacing $o(B)$ by B'. Then, in the minimal logic,
 
 $[L_1-L_9, L_12-L_15, M P, G e n]: B<->B' tack.r C<->C'$.
 
-== Theorem 3.1.1
+=== Theorem 3.1.1
 
 $[L_1, L_2, L_12, L_13, M P]: forall x B(x) -> exists x B(x)$. What does it
 mean? It prohibits "empty domains".
 
-== Theorem 3.1.2
+=== Theorem 3.1.2
 
 + $[L_1, L_2, L_12, L_14, M P, G e n]: forall x(B->C)->(forall x B -> forall x C)$.
 + $[L_1, L_2, L_12-L_15, M P, G e n]: forall x(B->C)->(exists x B->exists x C)$.
 
-== Theorems 3.1.3
+=== Theorems 3.1.3
 
 If $F$ is any formula, then:
 
 + (U-introduction) $[G e n]: F(x) tack.r forall x F(x)$.
 + (U-elimination) $[L_12, M P, G e n]: forall x F(x) tack.r F(x)$.
-+ (E-introduction) $[L_13, M P, G e n]: F(x) tack.r exists z(x+z+1=y).x F(x)$.
++ (E-introduction) $[L_13, M P, G e n]: F(x) tack.r exists x F(x)$.
 
-== Theorems 3.1.4
+=== Theorems 3.1.4
 
 If $F$ is any formula, and $G$ is a formula that does not contain free
 occurrences of $x$, then:
 
-+ (U2-introduction) $[L_14, M P, G e n] G -> F (x) tack.r G -> forall x F (x)$.
++ (U2-introduction) $[L_14, M P, G e n]: G->F (x) tack.r G->forall x F (x)$.
 + (E2-introduction) $[L_15, M P, G e n]: F(x)->G tack.r exists x F (x)->G$.
 
-== Theorem 3.1.5
+=== Theorem 3.1.5
 
 + $[L_1, L_2, L_5, L_12, L_14, M P, G e n]: forall x forall y B(x,y) <-> forall y forall x B(x,y)$
 + $[L_1, L_2, L_5, L_13, L_15, M P, G e n]: exists x exists y B(x,y) <-> exists y exists x B(x,y)$.
 + $[L_1, L_2, L_12-L_15, M P, G e n]: exists x forall y B(x,y) <-> forall y exists x B(x,y)$.
 
-== Theorem 3.1.6
+=== Theorem 3.1.6
 If the formula $B$ does not contain free occurrences of $x$, then
 $[L_1-L_2, L_12-L_15, M P, G e n]: (forall x B)<->B;(exists x B)<->B$, i.e.,
 quantifiers $forall x; exists x$ can be dropped or introduced as needed.
 
-== Theorem 3.2.1
-In the classical logic, $[L_1-L_15, M P, G e n]: not x not B forall <-> x B$.
+== Formulas Containing Negations and a Single Quantifier
+=== Theorem 3.2.1
+$[L_1-L_15, M P, G e n]: not x not B forall <-> x B$.
 
-== Theorem 3.3.1
-
+=== Theorem 3.3.1
 + $[L_1-L-5, L_12, L_14, M P, G e n]: forall x(B and C)<-> forall x B and forall x C$.
 + $[L_1, L_2, L_6-L_8, L_12, L_14, M P, G e n]: tack.r forall x B or forall x C -> forall x(B or C)$.
   The converse formula $forall x(B or C)-> forall x B or forall x C$ cannot be
   true.
 
-== Theorem 3.3.2
+=== Theorem 3.3.2
 
 + $[L_1-L_8, L_12-L_15, M P, G e n]: exists x(B or C)<-> exists x B or exists x C$
 + $[L_1-L_5, L_13-L_15, M P, G e n]: exists x(B and C)-> exists x B and exists C$.
@@ -316,21 +316,19 @@ In the classical logic, $[L_1-L_15, M P, G e n]: not x not B forall <-> x B$.
 = Three-valued logic
 
 For example, let us consider a kind of "three-valued logic", where 0 means
-"`false`", 1 -- "`unknown`" (or `NULL` -- in terms of SQL), and 2 means "true".
+"`false`", 1 -- "`unknown`" (or `NULL` -- in terms of SQL), and 2 means "`true`".
 Then it would be natural to define "truth values" of conjunction and disjunction
 as
 
-$A and B=min ( A, B)$ ;
+$A and B=min(A, B)$;
 
-$A or B=max (A , B)$ .
+$A or B=max(A, B)$ .
 
-But how should we define "truth values" of implication and negation?
-
-#table(
-  columns: 5, $A$, $B$, $A and B$, $A or B$, $A->B$, $0$, $0$, $0$, $0$, $i_1$, $0$, $1$, $0$, $1$, $i_2$, $0$, $2$, $0$, $2$, $i_3$, $1$, $0$, $0$, $1$, $i_4$, $1$, $1$, $1$, $1$, $i_5$, $1$, $2$, $1$, $2$, $i_6$, $2$, $0$, $0$, $2$, $i_7$, $2$, $1$, $1$, $2$, $i_8$, $2$, $2$, $2$, $2$, $i_9$,
+#grid(
+  columns: 2, gutter: 2em, table(
+    columns: 5, $A$, $B$, $A and B$, $A or B$, $A->B$, $0$, $0$, $0$, $0$, $2$, $0$, $1$, $0$, $1$, $2$, $0$, $2$, $0$, $2$, $2$, $1$, $0$, $0$, $1$, $2$, $1$, $1$, $1$, $1$, $2$, $1$, $2$, $1$, $2$, $2$, $2$, $0$, $0$, $2$, $0$, $2$, $1$, $1$, $2$, $1$, $2$, $2$, $2$, $2$, $2$,
+  ), table(columns: 2, $A$, $not A$, $0$, $2$, $1$, $1$, $2$, $0$),
 )
-
-#table(columns: 2, $A$, $not A$, $0$, $i_10$, $1$, $i_11$, $2$, $i_12$)
 
 = Model interpreation
 
